@@ -31,4 +31,8 @@ public class WordCounter
             counts.put(word, counter + 1);
         }
     }
+    public void usageCountOfEachWord()
+    {
+        System.out.println(counts);
+    }
 }

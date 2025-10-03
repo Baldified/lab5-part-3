@@ -25,6 +25,7 @@ public class Responder
     // Default responses to use if we don't recognise a word.
     private ArrayList<String> defaultResponses;
     private Random randomGenerator;
+    private final HashMap<String, Integer> newWords;
 
     /**
      * Construct a Responder
@@ -36,6 +37,7 @@ public class Responder
         fillResponseMap();
         fillDefaultResponses();
         randomGenerator = new Random();
+        newWords = new HashMap();
     }
 
     /**
@@ -172,5 +174,20 @@ public class Responder
         // The number will be between 0 (inclusive) and the size of the list (exclusive).
         int index = randomGenerator.nextInt(defaultResponses.size());
         return defaultResponses.get(index);
+    }
+    private void getWordCount(HashSet<String> h)
+    {
+        
+        for (String j : h) {
+             if (!responseMap.containsKey(j)){
+                newWords.put(j, newWords.getOrDefault(j, 0) + 1);
+
+            }
+        }
+    }
+    public String aaa()
+    {
+        //System.out.println(newWords);
+        return "";
     }
 }

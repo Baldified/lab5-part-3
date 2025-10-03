@@ -52,6 +52,8 @@ public class SupportSystem
             }
         }
         printGoodbye();
+        counter.usageCountOfEachWord();
+        responder.aaa();
     }
 
     /**
