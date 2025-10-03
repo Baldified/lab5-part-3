@@ -33,4 +33,5 @@ ANSWERS
 
 43. If the specified key is not already associated with a value (or is mapped to null) associates it with the given value and returns null, else returns the current value.
 
+46. It's missing a few methods from the SupportSystem class like pringGoodbye() and printWelcome(). It could be useful in a way that it links to the class or interface locations and I don't see any errors.
 

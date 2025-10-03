@@ -20,8 +20,12 @@ import java.util.Random;
  */
 public class Responder
 {
+    /**
+     * HashMap field named responseMap.
+     */
+    
     // Used to map key words to responses.
-    private HashMap<String, String> responseMap;
+    public HashMap<String, String> responseMap;
     // Default responses to use if we don't recognise a word.
     private ArrayList<String> defaultResponses;
     private Random randomGenerator;
@@ -65,7 +69,7 @@ public class Responder
      * Enter all the known keywords and their associated responses
      * into our response map.
      */
-    private void fillResponseMap()
+    public void fillResponseMap()
     {
         responseMap.put("crash", 
                         """
@@ -175,19 +179,12 @@ public class Responder
         int index = randomGenerator.nextInt(defaultResponses.size());
         return defaultResponses.get(index);
     }
-    private void getWordCount(HashSet<String> h)
+    
+    /**
+     * Returns the responseMap field.
+     */
+    public HashMap<String, String> responseMapHell()
     {
-        
-        for (String j : h) {
-             if (!responseMap.containsKey(j)){
-                newWords.put(j, newWords.getOrDefault(j, 0) + 1);
-
-            }
-        }
-    }
-    public String aaa()
-    {
-        //System.out.println(newWords);
-        return "";
+        return responseMap;
     }
 }

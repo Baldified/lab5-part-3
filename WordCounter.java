@@ -11,26 +11,38 @@ public class WordCounter
 {
     // Associate each word with a count.
     private final HashMap<String, Integer> counts;
-
+    private Responder newMap;
+    
     /**
      * Create a WordCounter
      */
     public WordCounter()
     {
         counts = new HashMap<>();
+        newMap = new Responder();
+        newMap.fillResponseMap();
     }
     
     /**
-     * Update the usage count of all words in input.
+     * Update the usage count of all words in input except for those in the fillResponseMap method in the Responder class.
      * @param input A set of words entered by the user.
      */
-    public void addWords(HashSet<String> input)
+    public  void addWords(HashSet<String> input)
     {
+        HashMap<String, String> pleaseWork = newMap.responseMapHell();
         for(String word : input) {
-            int counter = counts.getOrDefault(word, 0);
-            counts.put(word, counter + 1);
+            
+            if(!pleaseWork.containsKey(word))
+            {
+                int counter = counts.getOrDefault(word, 0);
+                counts.put(word, counter + 1);
+            }
         }
     }
+    
+    /**
+     * Prints a word count of used words.
+     */
     public void usageCountOfEachWord()
     {
         System.out.println(counts);

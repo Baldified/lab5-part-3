@@ -31,9 +31,10 @@ public class SupportSystem
 
     /**
      * Start the technical support system. This will print a welcome message and enter
-     * into a dialog with the user, until the user ends the dialog.
+     * into a dialog with the user, until the user ends the dialog. 
+     * When the user ends the dialog, it will print a word count.
      */
-    public void start()
+    public void start() 
     {
         boolean finished = false;
 
@@ -53,7 +54,6 @@ public class SupportSystem
         }
         printGoodbye();
         counter.usageCountOfEachWord();
-        responder.aaa();
     }
 
     /**
